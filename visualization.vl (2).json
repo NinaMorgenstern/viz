@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/NinaMorgenstern/viz/main/pivot_bubble.csv"
+  },
+  "width": 600,
+  "height": 400,
+  "mark": {
+    "type": "circle",
+    "opacity": 0.8,
+    "stroke": "black",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "x": {"field": "year", "type": "temporal", "axis": {"grid": false}},
+    "y": {"field": "attacktype", "type": "nominal", "axis": {"title": ""}},
+    "size": {
+      "field": "deaths",
+      "type": "quantitative",
+      "title": "Annual Global Deaths",
+      "legend": {"clipHeight": 20},
+      "scale": {"rangeMax": 5000}
+    },
+    "color": {"field": "attacktype", "type": "nominal", "legend": null}
+  },
+  "config": {}
+}
